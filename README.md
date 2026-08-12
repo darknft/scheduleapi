@@ -1,7 +1,7 @@
-# Mock EHR & Scheduling API
+#Scheduling API
 
 Simulates a legacy Electronic Health Record / Scheduling system for the
-Salesforce Healthcare Patient Engagement project. MuleSoft integrates with
+Salesforce Healthcare Patient schedule project. MuleSoft integrates with
 this API the same way it would integrate with a real EHR like Epic or Cerner.
 
 ## Data model correspondence with Salesforce
@@ -14,7 +14,7 @@ this API the same way it would integrate with a real EHR like Epic or Cerner.
 
 Keeping these aligned is what makes the MuleSoft matching/sync logic realistic.
 
-## 1. Run locally
+## 1. How to run locally
 
 ```bash
 # from inside the mock-ehr-api folder
@@ -42,21 +42,11 @@ Then open:
 ## 3. Seed data included
 
 - **3 providers**: Dr. Sarah Chen (Primary Care), Dr. James Okafor (Cardiology), Dr. Maria Lopez (Pediatrics)
-- **2 patients**: Amanda Pineda (MRN-00001), Carlos Ramirez (MRN-00002)
+- **2 patients**: Amanda Perez (MRN-00001), Carlos Ramirez (MRN-00002)
 - **7 days of availability** per provider, 9am–4pm in 30-minute slots (regenerates fresh each time you restart the server)
 
-Note: everything resets when the server restarts — there's no database. That's
-intentional for this project phase; if you want persistence later, swapping
-in SQLite is a small change (ask and I'll walk you through it).
 
-## 4. Deploying to Google Cloud Run (next step)
-
-Once you've tested this locally and it behaves the way you expect, the next
-step is containerizing it with Docker and deploying to Cloud Run so it has a
-real HTTPS URL that MuleSoft (running on Anypoint Platform) can actually
-reach. That's a separate step — let's do it once this is working well for you.
-
-## 5. Example: booking flow (what MuleSoft/Agentforce Voice will do)
+## 4. Example: booking flow (what MuleSoft/Agentforce Voice will do)
 
 ```bash
 # 1. Check availability
